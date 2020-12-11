@@ -30,9 +30,44 @@ h2 {
     margin-bottom: 15px;
 }
 
-li {
+/* li {
     margin-top: 10px;
     margin-bottom: 10px;
+} */
+
+.index_list {
+    margin: 3em 0 1em 0;
+}
+
+.index_list_title {
+    display: inline-block;
+  padding: 1px 10px 0 10px;
+  background: #000000;
+  color: #fff;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+}
+
+.index_list ul {
+    margin: 0;
+  padding: 5px;
+  position: relative;
+  border: solid 2px #000080;
+}
+
+.index_list ul li {
+    color: #000000;
+  line-height: 1.5;
+  padding: 0.5em 0.5em 0.5em 1.8em;
+  list-style-type: none;
+  font-weight: bold;
+}
+.index_list ul li:before {
+    font-family: FontAwesome;
+  content: "\f14a";
+  position: absolute;
+  left : 0.5em;
+  color: #000000;
 }
 
 p {

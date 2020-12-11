@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:import url="../layout/app.jsp">
     <c:param name="content">
         <c:if test="${flush != null}">
@@ -8,16 +9,26 @@
             </div>
         </c:if>
         <h2>ノート一覧</h2>
-        <ul>
-            <c:forEach var="note" items="${notes}">
-                <li>
+        <div class="index_list">
+            <ul>
+                <c:forEach var="note" items="${notes}">
+                <div class="index_list_title">
                     <a href="${pageContext.request.contextPath}/show?id=${note.id}">
-                        <c:out value="${note.id}"/>
-                    </a>
-                    :<c:out value="${note.title}"></c:out> &gt; <c:out value="${note.content}"/>
+                        <c:out value="${note.id}"/> </a>
+                            :<c:out value="${note.title}"></c:out>
+                </div>
+                <li>
+                    作成日時:<fmt:formatDate value="${note.created_at}" pattern="yyyy-MM-dd"/>
+                </li>
+                <li>
+                    更新日時:<fmt:formatDate value="${note.updated_at}" pattern="yyyy-MM-dd"/>
+                </li>
+                <li>
+                     <pre><c:out value="${note.content}"/></pre>
                 </li>
             </c:forEach>
         </ul>
+        </div>
         <div id="pagination">
             (全 ${notes_count}件)<br/>
             <c:forEach var="i" begin="1" end="${((notes_count -1)/3) +1}" step="1">
