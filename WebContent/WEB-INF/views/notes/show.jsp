@@ -14,7 +14,7 @@
                         </tr>
                         <tr>
                             <th>ノート</th>
-                            <td><c:out value="${note.content}"/></td>
+                            <td><pre><c:out value="${note.content}"/></pre></td>
                         </tr>
                         <tr>
                             <th>作成日時</th>

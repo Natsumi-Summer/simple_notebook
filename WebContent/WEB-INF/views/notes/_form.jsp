@@ -14,7 +14,7 @@
 <br/><br/>
 
 <label for="content">ノート</label><br/>
-<input type="text" name="content" value="${note.content}"/>
+<textarea rows="15" cols="30" name="content" value="${note.content}"></textarea>
 <br/><br/>
 
 <input type="hidden" name="_token" value="${_token}"/>
