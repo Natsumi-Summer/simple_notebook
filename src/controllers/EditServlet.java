@@ -38,8 +38,9 @@ public class EditServlet extends HttpServlet {
         request.setAttribute("note", n);
         request.setAttribute("_token", request.getSession().getId());
 
-        request.getSession().setAttribute("note_id", n.getId());
-
+        if(n != null){
+            request.getSession().setAttribute("note_id", n.getId());
+        }
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/notes/edit.jsp");
         rd.forward(request, response);
     }
