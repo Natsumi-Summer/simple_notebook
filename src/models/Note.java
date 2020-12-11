@@ -16,6 +16,10 @@ import javax.persistence.Table;
     @NamedQuery(
             name = "getAllNotes",
             query = "SELECT m FROM Note AS m ORDER BY m.id DESC"
+            ),
+    @NamedQuery(
+            name = "getNotesCount",
+            query = "SELECT COUNT(m) FROM Note AS m"
             )
 })
 @Table(name = "notes")
